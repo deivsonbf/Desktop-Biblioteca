@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioAutores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c18bd41e-dce8-4d16-a6a2-53d9ff3e1168">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="20"/>
+	<queryString>
+		<![CDATA[SELECT * FROM LIVROS ORDER BY AUTOR;]]>
+	</queryString>
+	<field name="id_livro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="autor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ano" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="resenha" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_cadastro" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="editora" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="genero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nota" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="394" y="59" width="100" height="20" forecolor="#FFFFFF" uuid="f2e1f54f-08e9-46a6-8d2e-4383180f0351"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#003399" uuid="9221889a-4806-45b0-9bc9-b4c9a2cf67d4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="15" width="269" height="44" forecolor="#FFFFFF" uuid="fdbd861c-2c08-439f-be3f-44883a1b527b"/>
+				<textElement>
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[BookManager 1.0]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="347" y="39" width="173" height="20" forecolor="#FFFFFF" uuid="e6b1a58c-0e5d-48ad-bbc9-a0af363e410e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="3" width="100" height="20" forecolor="#003399" backcolor="#0066CC" uuid="50b333f8-cbc7-4c13-b6b2-30564c4a1497"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="2" width="192" height="20" forecolor="#003399" uuid="ec5274a9-722d-4e6c-ad75-fc0cad575117"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Autor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="2" width="177" height="20" forecolor="#003399" uuid="f67b0eb0-884a-447a-b680-468c0933793b"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Livro]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="4" width="100" height="20" uuid="d6c19949-be21-4e5e-8f2a-d81a19b2325d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{id_livro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="4" width="192" height="20" uuid="8aa830d9-9176-4331-9f5c-d0ff689e24ba"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{autor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="4" width="177" height="20" uuid="01864b15-dc92-4366-a32e-49aef65eda88"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="431" y="34" width="100" height="20" uuid="ef01f7eb-4d86-47a2-9d91-ddb54aba1d9c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
